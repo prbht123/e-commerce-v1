@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'modules.ProductClient.cartapp',
     'modules.wishlistapiapp',
     'rest_framework',
+    'rest_framework.authtoken'
     
 ]
 
@@ -152,3 +153,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL =  config('EMAIL_HOST_USER')
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    
+}

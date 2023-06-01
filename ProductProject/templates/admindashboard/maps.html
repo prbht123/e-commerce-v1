@@ -1,0 +1,50 @@
+
+{% extends 'admindashboard/partial/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block styles %}
+<style>
+    .map-container-3{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.map-container-3 iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<section class="text-center mt-5">
+
+
+    <h3 class="mb-5">Maps</h3>
+  
+    <div class="row">
+      <div class="col-lg-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.00599512526003!3d40.72586666928451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598f988156a9%3A0xd54629bdf9d61d68!2sBroadway-Lafayette%20St!5e0!3m2!1spl!2spl!4v1624523797308!5m2!1spl!2spl"
+          class="h-100 w-100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+  
+      <div class="col-lg-7">
+        <!--Google map-->
+        <div id="map-container-google-3" class="z-depth-1-half map-container-3">
+            <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            style="border:0" allowfullscreen></iframe>
+        </div>
+  
+      </div>
+    </div>
+  
+  
+  </section>
+
+  {% endblock %}

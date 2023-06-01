@@ -57,7 +57,7 @@
       </ul>
       <form class="d-flex">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-fill w-100">
-        {% if user.is_staff %}
+        {% if request.session.user.is_staff %}
             <li class="nav-item">
                 <a class="me-5 nav-link" href="{% url 'admindashboard:home' %}">DASHBOARD</a>
             </li>
@@ -65,20 +65,20 @@
         <li class="nav-item">
           <a class="me-5 nav-link" href="{% url 'cartapp:cart_detail' %}">Cart</a>
         </li>
-        {% if user.username %}
+        {% if request.session.user %}
             <li class="nav-item">
-              <a class="me-5 nav-link" href="{% url 'productclientapp:list_wish_item' %}">WishList</a>
+              <a class=" nav-link" href="{% url 'productclientapp:list_wish_item' %}">WishList</a>
           </li>
             <li class="nav-item">
-                <a class="me-5 nav-link" href="{% url 'accountapp:profile' %}">{{user.username}}</a>
+                <a class="nav-link" href="{% url 'accountapp:profile' %}">{{request.session.user.username}}</a>
             </li>
             <li class="nav-item">
-                <a class="me-5 nav-link" href="{% url 'accountapp:logout' %}">LOGOUT</a>
+                <a class="me-5 nav-link" href="{% url 'productclientapp:logout' %}">LOGOUT</a>
             </li>
             
         {% else %}
         <li class="nav-item">
-            <a class="nav-link deactive" href="{% url 'accountapp:login' %}">SIGNIN</a>
+            <a class="nav-link deactive" href="{% url 'productclientapp:login' %}">SIGNIN</a>
         </li>
         {% endif %}
         </ul>

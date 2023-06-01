@@ -8,16 +8,21 @@ app_name = "accountapp"
 
 urlpatterns = [
     path('registration', views.RegisterView.as_view(),name='registration'),
-   path('login/', auth_views.LoginView.as_view(template_name='account/signin.html'), name="login"),
-   path('logout/', auth_views.LogoutView.as_view(template_name='account/signout.html'), name='logout'),
+#    path('login/', auth_views.LoginView.as_view(template_name='account/signin.html'), name="login"),
+#    path('logout/', auth_views.LogoutView.as_view(template_name='account/signout.html'), name='logout'),
    path('password-reset/', auth_views.PasswordResetView.as_view(template_name='account/registration/password_reset_form.html',
          subject_template_name='account/registration/password_reset_subject.txt', email_template_name='account/registration/password_reset_email.html', success_url=reverse_lazy('accountapp:password_reset_done')), name='password_reset'),
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(
         template_name='account/registration/password_reset_done.html'), name='password_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(
-        template_name='account/registration/password_reset_confirm.html',success_url=reverse_lazy('accountapp:login')), name='password_reset_confirm'),
+        template_name='account/registration/password_reset_confirm.html',success_url=reverse_lazy('productclientapp:login')), name='password_reset_confirm'),
    path('profile/', views.ProfileDetailView.as_view(), name='profile'),
 
+
+   # login and logout api
+   path('addUser/', views.Record.as_view(), name="register"),
+   path('login/', views.Login.as_view(), name="login"),
+   path('logout/', views.Logout.as_view(), name="logout"),
 
    # api enduser
    path('countuserproduct/',views.UserProductCountView.as_view(),name='count_user_product'),

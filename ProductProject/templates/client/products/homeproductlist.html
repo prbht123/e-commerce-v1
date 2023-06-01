@@ -9,7 +9,7 @@
       <img src="{% if product1.image %}{{ product1.image }}{% else %}{{product1.image_url}}{% endif %}" class="card-img-top mt-2" style="height:200px;width:100%;">
         <div class="card-body">
           <p class="card-text text-danger" style="font-size: 0.9rem">
-            {{product1.name}} <span>{% if user.username %}
+            {{product1.name}} <span>{% if request.session.user.username %}
          
                 {% if product1.id in wish_list %}
                   <a class="float-end"  href="{% url 'productclientapp:create_wish_item' %}?product_id={{product1.id}}"> <i class="fa fa-heart text-danger"></i></a>

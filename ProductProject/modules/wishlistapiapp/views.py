@@ -3,7 +3,7 @@ from modules.wishlistapiapp.serializers import WishItemsCreateSerializer,WishIte
 from modules.ProductApiApp.serializers import ProductListSerializer
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,permissions
 from modules.ProductApiApp.models import Product
 from modules.wishlistapiapp.models import WishItems
 from modules.AccountApp.serializers import UserListSerializer
@@ -27,6 +27,8 @@ error_response = {
 
 class CreateWishItemsView(GenericAPIView):
     serializer_class = WishItemsCreateSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     def post(self, request):
         try:
             serializer = WishItemsCreateSerializer(data=request.data)
@@ -40,6 +42,7 @@ class CreateWishItemsView(GenericAPIView):
 
 class ListWishItemsView(GenericAPIView):
     serializer_class = WishItemsListSerializer
+    
     def get(self, request):
         try:
             user_id = self.request.GET.get('user_id',None)
@@ -61,13 +64,12 @@ class WishItemDetailView(GenericAPIView):
     serializer_class = WishItemsListSerializer
     queryset = WishItems.objects.all()
     lookup_field = 'slug'
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request,*args,**kwargs):
         try:
             instance = self.get_object()
-            print(instance)
             serializer = WishItemsListSerializer(instance)
-            print(serializer.data)
             success_response.update(data = serializer.data)
             return Response(success_response, status=status.HTTP_200_OK)
         except:
@@ -78,6 +80,7 @@ class WishItemDeleteView(GenericAPIView):
     serializer_class = WishItemsListSerializer
     queryset = WishItems.objects.all()
     lookup_field = 'slug'
+    permission_classes = (permissions.IsAuthenticated,)
 
     def delete(self, request,*args, **kwargs):
         try:
@@ -91,6 +94,8 @@ class WishItemDeleteView(GenericAPIView):
 
 class ListWishItemsAdminView(GenericAPIView):
     serializer_class = WishItemsListSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     def get(self, request):
         try:
             queryset = WishItems.objects.all()

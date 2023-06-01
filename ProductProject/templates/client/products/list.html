@@ -58,7 +58,7 @@ Product List
               </form>
               
   
-               {% if user.username %}
+               {% if request.session.user.username %}
                
                 {% if product.id in wish_list %}
                   <a class="float-start" style="font-size:24px" href="{% url 'productclientapp:create_wish_item' %}?product_id={{product.id}}"> <i class="fa fa-heart text-danger"></i></a>

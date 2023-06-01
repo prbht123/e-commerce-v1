@@ -1,13 +1,16 @@
 from django.shortcuts import render,redirect
 from django.views.generic import DetailView
 from django.contrib.auth.models import User
-from rest_framework.generics import GenericAPIView
-from modules.AccountApp.serializers import RegisterSerializer, UserListSerializer
+from rest_framework.generics import GenericAPIView, ListCreateAPIView
+from modules.AccountApp.serializers import RegisterSerializer, UserListSerializer, UserSerializer, UserLoginSerializer, UserLogoutSerializer
 import datetime
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,permissions
 from modules.ProductApiApp.models import Product
 from modules.wishlistapiapp.models import WishItems
+
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 success_response = {
@@ -24,6 +27,43 @@ error_response = {
     'is_success':False
 }
 
+class Record(ListCreateAPIView):
+    # get method handler
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class Login(GenericAPIView):
+    # get method handler
+    queryset = User.objects.all()
+    serializer_class = UserLoginSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer_class = UserLoginSerializer(data=request.data)
+
+        if serializer_class.is_valid(raise_exception=True):
+            user = User.objects.get(username=serializer_class.data['user_id'])
+            data = {
+                'id' : user.id,
+                'username':user.username,
+                'email' : user.email,
+                'is_staff' : user.is_staff,
+                'token' : serializer_class.data['token']
+            }
+            return Response({'user':data}, status=status.HTTP_200_OK)
+        return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class Logout(GenericAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserLogoutSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer_class = UserLogoutSerializer(data=request.data)
+        if serializer_class.is_valid(raise_exception=True):
+            return Response(serializer_class.data, status=status.HTTP_200_OK)
+        return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 class ProfileDetailView(DetailView):
     """
@@ -34,11 +74,15 @@ class ProfileDetailView(DetailView):
     context_object_name = 'user_profile'
 
     def get(self, request, *args, **kwargs):
-        return render(request, self.template_name)
+        context = {}
+        if 'user' in self.request.session:
+            user_profile = User.objects.get(username=self.request.session['user']['username'])
+            context['user'] = user_profile
+        return render(request, self.template_name,context)
 
 
 class RegisterView(GenericAPIView):
-    serializer_class = RegisterSerializer
+    serializer_class = UserSerializer
     template_name = 'account/signup.html'
 
     def get(self, request, *args, **kwargs):
@@ -48,10 +92,10 @@ class RegisterView(GenericAPIView):
         password = request.POST['password']
         password1 = request.POST['password1']
         if password == password1:
-            serializer = RegisterSerializer(data=request.data)
+            serializer = UserSerializer(data=request.data)
             if serializer.is_valid():
                 user = serializer.save()
-                return redirect('accountapp:login')
+                return redirect('productclientapp:login')
 
         return render(request, self.template_name)
 
@@ -100,6 +144,8 @@ class UserProductCountView(GenericAPIView):
 
 class AdminUserListView(GenericAPIView):
     serializer_class = UserListSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     def get(self, request):
         try:
             queryset = User.objects.filter(is_staff = True,is_active=True).order_by('first_name','last_name')
@@ -112,6 +158,8 @@ class AdminUserListView(GenericAPIView):
 
 class NormalUserListView(GenericAPIView):
     serializer_class = UserListSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     def get(self, request):
         try:
             queryset = User.objects.filter(is_active=True,is_staff=False).order_by('first_name','last_name')
@@ -124,6 +172,8 @@ class NormalUserListView(GenericAPIView):
 
 class DeactivatedUserListView(GenericAPIView):
     serializer_class = UserListSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     def get(self, request):
         try:
             queryset = User.objects.filter(is_active=False).order_by('first_name','last_name')
@@ -137,6 +187,8 @@ class DeactivatedUserListView(GenericAPIView):
 
 class ChangeModeUserView(GenericAPIView):
     serializer_class = UserListSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
     def get(self, request,pk, *args, **kwargs):
         mode = self.request.GET.get('mode',None)
         try:

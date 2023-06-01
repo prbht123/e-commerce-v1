@@ -2,7 +2,7 @@ from django.shortcuts import render
 from modules.ProductApiApp.serializers import ProductCreateSerializer,ProductListSerializer
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,generics, permissions
 from modules.ProductApiApp.models import Product, Category
 import base64
 
@@ -26,6 +26,8 @@ error_response = {
 
 class CreateProductView(GenericAPIView):
     serializer_class = ProductCreateSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    
     def post(self, request):
         try:
             try:
@@ -80,6 +82,8 @@ class ProductDetailView(GenericAPIView):
             return Response(error_response, status=status.HTTP_400_BAD_REQUEST) 
 
 class ProductDeleteView(GenericAPIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    
     def delete(self, request, slug, format= None):
         try:
             queryset = Product.objects.get(slug = slug)
@@ -109,7 +113,6 @@ class ProductCategoryWiseListView(GenericAPIView):
             category_products_list = []
             category_list = Category.objects.all()
             for category in category_list:
-                print(category)
                 products = Product.objects.filter(category = category).order_by('name')
                 serializer = ProductListSerializer(products,many=True)
                 data = {

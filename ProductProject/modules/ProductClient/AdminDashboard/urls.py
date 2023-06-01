@@ -20,4 +20,8 @@ urlpatterns = [
    path('productlist/',views.ProductListDashboardView.as_view(),name='product_list'),
    path('productdelete/<slug:slug>/',views.ProductDeleteDashboardView.as_view(),name='product_delete'),
    path('productcreate/',views.ProductCreateDashboardView.as_view(),name='product_create'),
+
+   # calender urls
+   path('calender/',views.CalenderDashboardView.as_view(),name='calender'),
+   path('maps/',views.MapsDashboardView.as_view(),name='maps'),
 ]
