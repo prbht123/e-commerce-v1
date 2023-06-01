@@ -1,0 +1,49 @@
+{% extends 'client/partial/base.html' %}
+{% load static %}
+{% block title %}
+Cart
+{% endblock %}
+{% block content %}
+<section class="mt-5 mb-5">
+
+<div class="container justify-content-center align-items-center">
+    <h2 class="mt-5 text-primary">Your Wish Items</h2>
+    {% if wish_items %}
+<table class="table mt-3 mb-5">
+<thead style="background-color:DodgerBlue;">
+<tr class="text-white">
+<th scope="col">Image</th>
+<th scope="col">Product</th>
+<th scope="col">Quantity</th>
+<th scope="col">Price</th>
+<th scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+{% for item in wish_items %}
+<tr style="background-color: LightGrey;">
+<td>
+<a href="{{ product.get_absolute_url }}">
+<img height="200" width="300" src="{% if item.image %}{{ item.image}}{% else %}{{item.image_url}}{% endif %}">
+</a>
+</td>
+<td style="vertical-align: middle;">{{ item.name }}</td>
+<td style="vertical-align: middle;">
+{{item.stock}}
+</td>
+<td class="num" style="vertical-align: middle;">${{ item.price }}</td>
+<td class="num" style="vertical-align: middle;"><a class="float-start" style="font-size:24px" href="{% url 'productclientapp:create_wish_item' %}?product_id={{item.id}}"> <i class="fa fa-heart text-danger"></i></a></td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+</table>
+{% else %}
+ No WishList...
+{% endif %}
+</div>
+
+</section>
+
+{% endblock %}

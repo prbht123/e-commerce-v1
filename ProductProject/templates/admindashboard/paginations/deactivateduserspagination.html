@@ -1,0 +1,20 @@
+<section class="mt-2">
+    {% if deactivate_users %}
+    <div class="pagination justify-content-end mt-5 mb-5">
+        <span class="page-links d-flex float-right">
+           
+            {% if deactivate_users.has_previous %}
+                <a class="text-decoration-none me-2" href="{% url 'admindashboard:wish_lists' %}?page={{ deactivate_users.previous_page_number }}"><span class="h2" aria-hidden="true">&laquo;</span> </a>
+            {% endif %}
+            <span class="page-current">
+               <p class=" mt-2"> Page {{ deactivate_users.number }} of {{ deactivate_users.paginator.num_pages }}</p>
+            </span>
+            {% if deactivate_users.has_next %}
+                <a class="ms-2 text-decoration-none" href="{% url 'admindashboard:wish_lists' %}?page={{ deactivate_users.next_page_number }}"> <span class="h2" >&raquo;</span></a>
+            {% endif %}
+          
+        </span>
+    </div>
+    
+    {% endif %}
+    </section>

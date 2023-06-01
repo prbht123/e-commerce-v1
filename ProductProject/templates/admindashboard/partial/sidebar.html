@@ -1,0 +1,56 @@
+<section class="border-bottom w-100">
+<h5 class="lh-1 mB-0 logo-text mt-5 ms-3 mb-4">Welcome Admin</h5>
+</section>
+<ul class="nav nav-pills flex-column mb-sm-auto mb-2 align-items-center align-items-sm-start ms-4">
+    <li class="mt-3">
+        <a href="{% url 'admindashboard:home' %}" class="nav-link px-0 align-middle">
+        <i class="fa fa-home" style="color:blue"></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Dashboard</span>
+        </a>
+    </li>
+    <li class="mt-2">
+        <a href="{% url 'admindashboard:admin_user_list' %}" class="nav-link px-0 align-middle">
+        <i class='far fa-user-circle' style="color:blue"></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Admin Users</span></a>
+    </li>
+    <li class="mt-2">
+        <a href="{% url 'admindashboard:normal_user_list' %}" class="nav-link px-0 align-middle">
+        <i class='fas fa-user-alt' style="color:blue"></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Normal Users</span></a>
+    </li>
+    <li class="mt-2">
+        <a href="{% url 'admindashboard:deactivated_user_list' %}" class="nav-link px-0 align-middle">
+        <i class='fas fa-user-alt text-danger'></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Deactivated Users</span></a>
+    </li>
+    <li class="mt-2">
+        <a href="{% url 'admindashboard:product_list' %}" class="nav-link px-0 align-middle">
+        <i class='fab fa-product-hunt text-primary' ></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Product</span></a>
+    </li>
+    <li class="mt-2">
+        <a href="{% url 'admindashboard:wish_lists' %}" class="nav-link px-0 align-middle">
+            <i class="fas fa-heart text-primary" ></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">WishList</span></a>
+    </li>
+    <li class="mt-2">
+        <a href="" class="nav-link px-0 align-middle">
+        <i class="fab fa-pagelines" style="color:blue"></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Pages</span>
+    </a>
+    </li>
+    <li class="mt-2">
+        <a href="" class="nav-link px-0 align-middle">
+        <i class="far fa-map" style="color:blue"></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Maps</span>
+    </a>
+    </li>
+    <li class="mt-2">
+        <a href="" class="nav-link px-0 align-middle">
+        <i class="far fa-calendar" style="color:blue"></i>
+        <span class="ms-1 d-none d-sm-inline text-secondary">Calender</span>
+    </a>
+    </li>
+</ul>
+<hr />
+        

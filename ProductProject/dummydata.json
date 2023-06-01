@@ -1,0 +1,202 @@
+[
+    {
+        "name" : "ASUS TUF Gaming F15 Core i5 10th Gen",
+        "price" : 58990,
+        "stock" : 20,
+        "description" : " ASUS TUF Gaming F15 Core i5 10th Gen - (8 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/NVIDIA GeForce GTX 1650/144 Hz) FX506LHB-HN358W Gaming Laptop  (15.6 inch, Black Plastic, 2.30 kg kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/128/128/l3rmzrk0/computer/s/z/r/-original-imagetgzg4pgszmt.jpeg?q=70"
+    },
+    {
+        "name" : "ASUS TUF ",
+        "price" : 74990,
+        "stock" : 26,
+        "description" : "ASUS TUF Gaming A17 with 90Whr Battery Ryzen 7 Octa Core AMD R7-4800H - (8 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/NVIDIA GeForce RTX RTX 3050/144 Hz) FA706ICB-HX061W | FA706IC-HX036W Gaming Laptop  (17.3 Inch, Graphite Black, 2.60 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/l3rmzrk0/computer/z/2/c/-original-imagetjyhhtrtkdg.jpeg?q=70"
+    },
+    {
+        "name" : "acer Aspire 3 Dual Core 3020e",
+        "price" : 25190,
+        "stock" : 13,
+        "description" : "acer Aspire 3 Dual Core 3020e - (4 GB/256 GB SSD/Windows 11 Home) A314-22 Laptop  (14 Inch, Charcoal Black, 1.9 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/h/u/b/-original-imagg2vnsrgrfkmz.jpeg?q=70"
+    },
+    {
+        "name" : "Lenovo Intel Celeron Dual Core ",
+        "price" :30790,
+        "stock" : 23,
+        "description" : "Lenovo Intel Celeron Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 81WQ00MQIN|81WQ00NXIN Laptop  (15.6 Inch, Platinum Grey, 1.7 Kg, With MS Office)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/z/b/z/-original-imagmmng8dppnn4v.jpeg?q=70"
+    },
+    {
+        "name" : "Product1",
+        "price" : 6789.09,
+        "stock" : 23,
+        "description" : " This is awsome product",
+        "category" : "Laptop",
+        "image" : "https://images.hindustantimes.com/tech/htmobile4/P14807/heroimage/sony-e15127cn-core-i5-3rd-gen-4-gb-500-gb-windows-8-1-gb-14807-large-1.jpg"
+    },
+    {
+        "name" : "Lenovo IdeaPad 3 Chromebook ",
+        "price" : 16990,
+        "stock" : 23,
+        "description" : "Lenovo IdeaPad 3 Chromebook Intel Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) ideapad 3 cb 11igl05 2 Chromebook  (11.6 Inch, Onyx Black, 1.12 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/ksyz8280/computer/8/v/i/cb-11igl05-thin-and-light-laptop-lenovo-original-imag6fh8sqpuk3ts.jpeg?q=70"
+    },
+    {
+        "name" : "ASUS Chromebook Flip Touch Celeron Dual Core",
+        "price" : 16990,
+        "stock" : 23,
+        "description" : "ASUS Chromebook Flip Touch Celeron Dual Core - (4 GB/32 GB EMMC Storage/Chrome OS) C214MA-BU0704 Chromebook  (11.6 inch, Dark Grey, 1.20 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/s/z/n/-original-imagg3fxfrttfgvj.jpeg?q=70"
+    },
+    {
+        "name" : "PPLE 2020 Macbook Air M1",
+        "price" : 79990,
+        "stock" : 23,
+        "description" : "APPLE 2020 Macbook Air M1 - (8 GB/256 GB SSD/Mac OS Big Sur) MGN93HN/A  (13.3 inch, Silver, 1.29 kg",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/khdqnbk0/computer/f/y/t/apple-original-imafxfyq6x3yhzxg.jpeg?q=70"
+    },
+    {
+        "name" : "acer Aspire 7 Core i5 12th Gen",
+        "price" : 56990,
+        "stock" : 23,
+        "description" : " acer Aspire 7 Core i5 12th Gen - (16 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/NVIDIA GeForce GTX 1650) A715-5G/ A715-51G Gaming Laptop  (15.6 inch, Charcoal Black, 2.1 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/l4oi4cw0/computer/i/n/e/a715-5g-gaming-laptop-acer-original-imagfj2g954wfdyz.jpeg?q=70"
+    },
+    {
+        "name" : "APPLE 2022 MacBook AIR M2",
+        "price" : 105490,
+        "stock" : 23,
+        "description" : "APPLE 2022 MacBook AIR M2 - (8 GB/256 GB SSD/Mac OS Monterey) MLY33HN/A  (13.6 Inch, Midnight, 1.24 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/2/v/v/-original-imagfdeqter4sj2j.jpeg?q=70"
+    },
+    {
+        "name" : "ASUS TUF Gaming F15 Core i5 10th Gen",
+        "price" : 60990,
+        "stock" : 23,
+        "description" : "ASUS TUF Gaming F15 Core i5 10th Gen - (8 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/NVIDIA GeForce GTX 1650/144 Hz) FX506LHB-HN355W | FX506LH-HN258W Gaming Laptop  (15.6 inch, Black Plastic, 2.30 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/kz4gh3k0/computer/n/e/x/fx506lh-hn258ws-gaming-laptop-asus-original-imagb7hfzhmv6v9y.jpeg?q=70"
+    },
+    {
+        "name" : "Product2",
+        "price" : 6789.09,
+        "stock" : 23,
+        "description" : " This is awsome product",
+        "category" : "Laptop",
+        "image" : "https://images.hindustantimes.com/tech/htmobile4/P14807/heroimage/sony-e15127cn-core-i5-3rd-gen-4-gb-500-gb-windows-8-1-gb-14807-large-1.jpg"
+    },
+    {
+        "name" : "SAMSUNG Galaxy Book3 Core i5 Core i5 13th Gen",
+        "price" : 69990,
+        "stock" : 23,
+        "description" : " SAMSUNG Galaxy Book3 Core i5 Core i5 13th Gen - (8 GB/512 GB SSD/Windows 11 Home) Galaxy Book3 Thin and Light Laptop  (15.6 Inch, Silver, 1.58 Kg, With MS Office)t",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/c/y/k/galaxy-book3-thin-and-light-laptop-samsung-original-imagnb2chzcxhwxk.jpeg?q=70"
+    },
+    {
+        "name" : "ASUS Vivobook S14 OLED Intel EVO H-Series Core i5 12th Gen ",
+        "price" : 74990,
+        "stock" : 23,
+        "description" : "ASUS Vivobook S14 OLED Intel EVO H-Series Core i5 12th Gen - (16 GB/512 GB SSD/Windows 11 Home) S3402ZA-KM502WS Thin and Light Laptop  (14 Inch, Indie Black, 1.50 Kg, With MS Office)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/i/k/0/-original-imagpxgrx9chcehh.jpeg?q=70"
+    },
+    {
+        "name" : "Lenovo IdeaPad 3 Intel Core i5 12th Gen ",
+        "price" : 55400,
+        "stock" : 23,
+        "description" : " Lenovo IdeaPad 3 Intel Core i5 12th Gen - (8 GB/512 GB SSD/Windows 11 Home) 15IAU7 Thin and Light Laptop  (15.6 Inch, Arctic Grey, 1.63 Kg, With MS Office)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/j/m/2/-original-imagpa5gadtkbm6y.jpeg?q=70"
+    },
+    {
+        "name" : "HP 15s Intel Core i5 12th Gen",
+        "price" : 55890,
+        "stock" : 23,
+        "description" : "HP 15s Intel Core i5 12th Gen - (8 GB/512 GB SSD/Windows 11 Home) 15s-fq5111TU Thin and Light Laptop  (15.6 inch, Natural Silver, 1.69 Kg, With MS Office)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/j/y/9/-original-imagp7pfaztvgxv3.jpeg?q=70"
+    },
+    {
+        "name" : "acer Aspire 7 Ryzen 5 Hexa Core AMD R5-5500U",
+        "price" : 47990,
+        "stock" : 23,
+        "description" : " acer Aspire 7 Ryzen 5 Hexa Core AMD R5-5500U - (8 GB/512 GB SSD/Windows 11 Home/4 GB Graphics/NVIDIA GeForce GTX 1650) A715-42G/ A715-42G-R2NE Gaming Laptop  (15.6 inch, Black, 2.15 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/b/e/h/-original-imagjyc69gh3a8wu.jpeg?q=70"
+    },
+    {
+        "name" : "HP intel Celeron Dual Core",
+        "price" : 20990,
+        "stock" : 23,
+        "description" : "HP intel Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) 14a- na1004TU Chromebook  (14 Inch, Mineral Silver, 1.46 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/6/p/a/chromebook-chromebook-hp-original-imagkwj8tahdykbd.jpeg?q=70"
+    },
+    {
+        "name" : "ASUS Chromebook Touch Intel Celeron Dual Core ",
+        "price" : 18990,
+        "stock" : 23,
+        "description" : " ASUS Chromebook Touch Intel Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) C523NA-A20303 Chromebook  (15.6 inch, Silver, 1.69 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/l2jcccw0/computer/s/d/u/-original-imagdv4f66jmsqfv.jpeg?q=70"
+    },
+    {
+        "name" : "ASUS Chromebook Celeron Dual Core",
+        "price" : 25990,
+        "stock" : 23,
+        "description" : "ASUS Chromebook Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) C423NA-EC0521 Chromebook  (14 inch, Silver, 1.34 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/kr2e3680/computer/5/a/l/na-thin-and-light-laptop-asus-original-imag4yygqdqkpnpg.jpeg?q=70"
+    },
+    {
+        "name" : "HP Chromebook x360 Intel Celeron Quad Core",
+        "price" : 22990,
+        "stock" : 23,
+        "description" : "HP Chromebook x360 Intel Celeron Quad Core - (4 GB/64 GB EMMC Storage/Chrome OS) 14a-ca0504TU Thin and Light Laptop  (14 Inch, Forest Teal, 1.49 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/kzogn0w0/computer/j/u/m/14a-ca0504tu-thin-and-light-laptop-hp-original-imagbmt6dsjhwwhz.jpeg?q=70"
+    },
+    {
+        "name" : "HP intel Celeron Dual Core ",
+        "price" : 20990,
+        "stock" : 23,
+        "description" : "HP intel Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) 14a- na1004TU Chromebook  (14 Inch, Mineral Silver, 1.46 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/6/p/a/chromebook-chromebook-hp-original-imagkwj8tahdykbd.jpeg?q=70"
+    },
+    {
+        "name" : "Lenovo Slim 3 Chromebook Touch Intel Celeron Dual Core",
+        "price" : 18990,
+        "stock" : 23,
+        "description" : " Lenovo Slim 3 Chromebook Touch Intel Celeron Dual Core - (4 GB/64 GB EMMC Storage/Chrome OS) 14IGL05 Chromebook  (14 inch, Platinum Grey, 1.4 Kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/7/k/4/-original-imaggqgb6dbkyhbe.jpeg?q=70"
+    },
+    {
+        "name" : "Lenovo IdeaPad Flex 3 Chromebook Intel Celeron Dual Core",
+        "price" : 25490,
+        "stock" : 23,
+        "description" : " Lenovo IdeaPad Flex 3 Chromebook Intel Celeron Dual Core - (4 GB/128 GB EMMC Storage/Chrome OS) CB 11IJL6 Chromebook  (11.6 inch, Arctic Grey, 1.25 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/u/k/w/-original-imaggqgcggpau2zr.jpeg?q=70"
+    },
+    {
+        "name" : "HP Chromebook MediaTek Kompanio 500",
+        "price" : 19800,
+        "stock" : 23,
+        "description" : " HP Chromebook MediaTek Kompanio 500 - (4 GB/64 GB EMMC Storage/Chrome OS) 11A-NA0002MU Chromebook  (11.6 inch, Indigo Blue, 1.07 kg)",
+        "category" : "Laptop",
+        "image" : "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/u/m/a/-original-imagkqwzxzff6zaa.jpeg?q=70"
+    }
+]
