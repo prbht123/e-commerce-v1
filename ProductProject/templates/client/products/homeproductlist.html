@@ -1,0 +1,44 @@
+
+
+<div class="container-fluid justify-content-center mt-1">
+    <div class="row">
+      {% for product1 in product.products|slice:":5" %}
+     
+      <div class="card me-1 " style="width:14rem">
+      <a class="card-text float-right text-decoration-none" style="font-size: 0.9rem" href="{% url 'productclientapp:detail_product' slug=product1.slug %}" >
+      <img src="{% if product1.image %}{{ product1.image }}{% else %}{{product1.image_url}}{% endif %}" class="card-img-top mt-2" style="height:200px;width:100%;">
+        <div class="card-body">
+          <p class="card-text text-danger" style="font-size: 0.9rem">
+            {{product1.name}} <span>{% if user.username %}
+         
+                {% if product1.id in wish_list %}
+                  <a class="float-end"  href="{% url 'productclientapp:create_wish_item' %}?product_id={{product1.id}}"> <i class="fa fa-heart text-danger"></i></a>
+                 
+                  {% else %}
+                  <a class="float-end" href="{% url 'productclientapp:create_wish_item' %}?product_id={{product1.id}}"> <i class="fa fa-heart-o text-primary"></i></a>
+                
+                  {% endif %}
+                
+               {% endif %}</span> <br>
+            stock - {{product1.stock}}
+          </p>
+          <p class="card-title h6 text-truncate text-secondary"><b>{{property.property.property_name}}</b></p>
+          <p class="card-text" style="font-size: 0.9rem">
+            R${{product1.price}} 
+          </p>
+        </a>
+        <form action="{% url 'cartapp:cart_add' product1.id %}" method="post">
+            <span class="d-none">{{ cart_product_form }}</span>
+            {% csrf_token %}
+            <input class="btn btn-outline-primary text-primary float-start mt-0" type="submit" value="Add to cart">
+        </form>
+        </div>
+         
+         
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+  
+  

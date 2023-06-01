@@ -1,0 +1,20 @@
+<section class="mt-2">
+{% if products %}
+<div class="pagination justify-content-end mt-5 mb-5">
+    <span class="page-links d-flex float-right">
+       
+        {% if products.has_previous %}
+            <a class="text-decoration-none me-2" href="{% url 'productclientapp:list_product' %}?page={{ products.previous_page_number }}"><span class="h2" aria-hidden="true">&laquo;</span> </a>
+        {% endif %}
+        <span class="page-current">
+           <p class=" mt-2"> Page {{ products.number }} of {{ products.paginator.num_pages }}</p>
+        </span>
+        {% if products.has_next %}
+            <a class="ms-2 text-decoration-none" href="{% url 'productclientapp:list_product' %}?page={{ products.next_page_number }}"> <span class="h2" >&raquo;</span></a>
+        {% endif %}
+      
+    </span>
+</div>
+
+{% endif %}
+</section>

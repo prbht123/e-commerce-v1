@@ -1,0 +1,57 @@
+{% extends 'admindashboard/partial/base.html' %} {% load static %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{% block title %} Dashboard {% endblock title %} {% block content %}
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-primary min-vh-100">
+        
+        <h5 class="lh-1 mB-0 logo-text mt-4 mb-4">Welcome Admin</h5>
+        
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start ms-4" id="menu">
+          <li>
+            <a href="/" class="nav-link px-0 align-middle">
+                <i class="fa fa-home" style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link px-0 align-middle">
+                <i class='far fa-user-circle' style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline ">Admin Users</span></a>
+          </li>
+          <li>
+            <a href="" class="nav-link px-0 align-middle">
+                <i class='fas fa-user-alt' style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline">Normal Users</span></a>
+          </li>
+          <li>
+            <a href="" class="nav-link px-0 align-middle">
+                <i class='fa fa-product-hunt' style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline ">Product</span></a>
+          </li>
+          <li>
+            <a href="" class="nav-link px-0 align-middle">
+                <i class="fab fa-pagelines" style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline ">Pages</span>
+            </a>
+          </li>
+          <li>
+            <a href="" class="nav-link px-0 align-middle">
+                <i class="far fa-map" style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline">Maps</span>
+            </a>
+          </li>
+           <li>
+            <a href="" class="nav-link px-0 align-middle">
+                <i class="far fa-calendar" style="color:blue"></i>
+              <span class="ms-1 d-none d-sm-inline ">Calender</span>
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3 bg-light">{% block contentbody %}{% endblock %}</div>
+  </div>
+</div>
+{% endblock %}

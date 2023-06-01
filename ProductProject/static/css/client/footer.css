@@ -1,0 +1,19 @@
+
+.round{
+	background-color: #DA9D2C;
+	width: 140px;
+}
+.card{
+	background-color: rgba(120, 130, 140, 0.13);
+	width: 17rem; height: 26rem;
+}
+
+.footer_link{
+	color:#DA9D2C;
+}
+.fa{
+	color:#DA9D2C;
+}
+.form-control{
+	background-color: rgba(120, 130, 140, 0.13);
+}
