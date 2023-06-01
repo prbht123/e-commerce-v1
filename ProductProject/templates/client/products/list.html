@@ -1,0 +1,86 @@
+{% extends 'client/partial/base.html' %}
+{% load static %}
+{% block title %}
+Product List
+{% endblock %}
+
+{% block content %}
+<!-- Carousel -->
+<section class="mt-5 mb-2">
+    <div class="container">
+        <div class="row">
+      <div class="col-sm-4">
+      <h4 class="ml-4">List Of Products</h4>
+      </div>
+      <div class="col-sm-8 d-flex justify-content-end" >
+       <form action="">
+      <div class="input-group">
+        <input type="search" class="form-control rounded mt-2 me-1" name="product" placeholder="Product Name" aria-label="Search" aria-describedby="search-addon" />
+        <button class="btn btn-primary mt-2"><i class="fas fa-search text-white"></i></button>
+      </div>
+       </form>
+       </div>
+      </div>
+      </div>
+      
+      <div class="container justify-content-center mt-4 mb-4 " >
+        <div class="row justify-content-center">
+          {% if not products %}
+          <p class="text-center"> No product found.</p>
+       
+        {% endif %}
+        {% include 'client/paginations/pagination.html' %}
+          {% for product in products %}
+          <div class="card me-2 mt-4" style="height:300px;width:100vh;">    
+          <div class="card-body row">
+          <div class="col-sm-5">
+           <a class="card-text float-right text-decoration-none" style="font-size: 0.9rem" href="" >
+          <img src="{% if product.image %}{{ product.image }}{% else %}{{product.image_url}}{% endif %}" class="card-img-top mt-2" style="height:240px;width:400px;"/>
+          </a>
+          </div>
+          <div class="col-sm-6 ms-5 mt-1">
+            <p class="card-title h6 ml-1">{{product.name}} 
+            </p>
+              <p class="card-text text-danger" style="font-size: 1rem">
+                <b> {{product.description}}</b> <br>
+                <b>Stock - {{product.stock}} </b> <br>
+                  
+              </p>
+              
+              <p class="card-text" style="font-size: 1rem">
+                Price -  R${{product.price}} 
+              </p>
+              
+                <form action="{% url 'cartapp:cart_add' product.id %}" method="post">
+                  <span class="d-none">{{ cart_product_form }}</span>
+                  {% csrf_token %}
+                  <input class="btn btn-outline-primary text-primary float-start me-3" type="submit" value="Add to cart">
+              </form>
+              
+  
+               {% if request.session.user.username %}
+               
+                {% if product.id in wish_list %}
+                  <a class="float-start" style="font-size:24px" href="{% url 'productclientapp:create_wish_item' %}?product_id={{product.id}}"> <i class="fa fa-heart text-danger"></i></a>
+                 
+                  {% else %}
+                  <a class="float-start" style="font-size:24px" href="{% url 'productclientapp:create_wish_item' %}?product_id={{product.id}}"> <i class="fa fa-heart-o text-primary"></i></a>
+                
+                  {% endif %}
+                
+               {% endif %}
+              <a class="card-text float-end text-decoration-none" style="font-size:1.5rem" href="{% url 'productclientapp:detail_product' slug=product.slug %}" >
+                Show Details
+              </a>
+            </div>
+             
+            </div>
+              
+          </div>
+          {% endfor %}
+          {% include 'client/paginations/pagination.html' %}
+        </div>
+        
+      </div>
+</section>
+{% endblock %}

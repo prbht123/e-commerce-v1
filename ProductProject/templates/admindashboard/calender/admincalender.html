@@ -1,0 +1,116 @@
+{% extends 'admindashboard/partial/base.html' %}
+{% load static %}
+{% load static %}
+{% block title %}
+Calendar
+{% endblock %}
+{% block styles %}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+  
+    <link href='{% static "js/calender/fullcalendar/packages/core/main.css" %}' rel='stylesheet' />
+    <link href='{% static "js/calender/fullcalendar/packages/daygrid/main.css" %}' rel='stylesheet' />
+    
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+{% endblock %}
+{% block content %}
+
+<secton class="container mt-3 mb-5 ">
+    <div class="content w-75 h-75 ms-5">
+        <div id='calendar'></div>
+      </div>
+</secton>
+
+    
+
+<script src='{% static "js/calender/fullcalendar/packages/core/main.js" %}'></script>
+    <script src='{% static "js/calender/fullcalendar/packages/interaction/main.js" %}'></script>
+    <script src='{% static "js/calender/fullcalendar/packages/daygrid/main.js" %} '></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      plugins: [ 'interaction', 'dayGrid' ],
+      defaultDate: '2023-06-12',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2023-06-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2023-06-07',
+          end: '2023-06-10'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2023-06-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2023-06-12T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2023-06-11',
+          end: '2023-06-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2023-06-12T10:30:00',
+          end: '2023-06-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2023-06-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2023-06-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2023-06-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2023-06-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2023-06-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2023-06-28'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
+
+    </script>
+
+{% endblock %}
+
+
+
+

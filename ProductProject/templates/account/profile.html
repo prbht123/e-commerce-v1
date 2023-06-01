@@ -1,0 +1,51 @@
+{% extends 'client/partial/base.html' %}
+{% load static %}
+{% block title %}
+Profile
+{% endblock %}
+{% block styles %}
+{% endblock %}
+{% block content %}
+<section>
+
+<div class="container mt-5 mb-4">
+    <div class="row">
+    <div class="col-sm-3">
+       <img style="height:300px;width:100%" class="img1" src="https://c1.wallpaperflare.com/preview/180/6/509/woman-smile-joy-girl.jpg">
+    <div class="row mt-4">
+      <h5>Work</h5>
+      <p class="ml-4"> <b>Experiance : </b> There are some experienced property is added.  </p>
+    <p class="ml-4"> <b>Experiance : </b> There are some experienced property is added.  </p>
+    
+    </div>
+    </div>
+    <div class="col-sm-8 ml-4 ms-5">
+       <h3 class="mb-4">{{user.first_name}} {{user.last_name}}</h3>
+     
+        <div class="row ">
+        <div class="col-sm-10 mt-5">
+        <h5 >Contact Information : </h5>
+        
+           <p class="ml-4"> <b>Phone : </b> +91 9098765432 </p>
+           <p class="ml-4"> <b>Address : </b> sector v, Bdhannagar, Kolkata, West Bengal 720082</p>
+           <p class="ml-4"> <b>Email : </b> {{user.email}} </p>
+           <p class="ml-4"> <b>Site : </b> product.user.com </p>
+        <h5 class="mt-5">Basic Information : </h5>
+            <p class="ml-4"> <b>Name : </b> {{user.first_name}} {{user.last_name}} </p>
+            <p class="ml-4"> <b>Birthday : </b> 01/01/2000 </p>
+            <p class="ml-4"> <b>Gender : </b> Male </p>
+        </div>
+        
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+{% extends 'admindashboard/partial/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<section class="mt-5 mb-5">
+    <div class="container justify-content-center align-items-center">
+
+        <h3 class="text-primary mt-2 mb-5"><b>Create Product </b> </h3>
+        
+        <div class="container justify-content-center align-items-center">
+            <div class="row col-sm-6 ms-5">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-label-group">
+                        <label for="inputEmail" class="mt-4">Product Name</label>
+                        <input type="text" class="form-control mt-2" placeholder="Product Name" name="name" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail" class="mt-4">Product Category</label>
+                        <input type="text" class="form-control mt-2" placeholder="Product Category" name="category" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail" class="mt-4">Product Price</label>
+                        <input type="number" class="form-control mt-2" placeholder="0.01" step="0.01" name="price" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail" class="mt-4">Product Stocks</label>
+                        <input type="number" class="form-control mt-2" placeholder="00" name="stock" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail" class="mt-4">Product Description</label>
+                        <input type="text" class="form-control mt-2" placeholder="Product Description" name="description" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail" class="mt-4">Product Image</label>
+                        <input type="file" class="form-control mt-2" placeholder="Product Image" name="image" required autofocus>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="submit" class="form-control mt-5 w-25 btn btn-outline-primary float-start" value="Add Product"></input>
+                        <a class="form-control mt-5 w-25 btn btn-outline-danger float-end " href="{% url 'admindashboard:product_list' %}">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

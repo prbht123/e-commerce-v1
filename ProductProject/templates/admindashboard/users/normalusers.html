@@ -1,0 +1,49 @@
+{% extends 'admindashboard/partial/base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+<section class="mt-5 mb-5">
+    <div class="container justify-content-center align-items-center">
+
+        <h3 class="text-primary mt-2 mb-5"><b>Manage Normal Users</b></h3>
+        {% if normal_users %}
+        {% include 'admindashboard/paginations/normaluserspagination.html' %}
+        <table class="table mt-3">
+            <thead>
+                <tr class="text-primary"><b>
+                <th scope="col">S.No</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
+                </b>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in normal_users %}
+
+                <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <a class="text-decoration-none" href="{% url 'admindashboard:mode_change_user' pk=user.id  %}?mode=staff"><button class="btn btn-outline-primary">Convert admin user</button></a>
+                    <a class="text-decoration-none" href="{% url 'admindashboard:mode_change_user' pk=user.id  %}?mode=deactivate"><button class="btn btn-outline-danger">Delete</button></a>
+                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include 'admindashboard/paginations/normaluserspagination.html' %}
+        {% else %}
+        <h5 class="mt-5">No Users Found.</h5>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

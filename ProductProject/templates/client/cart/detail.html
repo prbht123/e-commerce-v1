@@ -1,0 +1,67 @@
+{% extends 'client/partial/base.html' %}
+{% load static %}
+{% block title %}
+Cart
+{% endblock %}
+{% block content %}
+<section class="mt-5 mb-5">
+
+<div class="container justify-content-center align-items-center">
+    <h2 class="mt-5 text-primary">Your shopping cart</h2>
+{% if cart %}
+<table class="table mt-3 mb-5">
+<thead style="background-color:DodgerBlue;">
+<tr class="text-white">
+<th scope="col">Image</th>
+<th scope="col">Product</th>
+<th scope="col">Quantity</th>
+<th scope="col">Remove</th>
+<th scope="col">Unit price</th>
+<th scope="col">Price</th>
+</tr>
+</thead>
+<tbody>
+{% for item in cart %}
+{% with product=item.product %}
+<tr style="background-color: LightGrey;">
+<td>
+<a href="{{ product.get_absolute_url }}">
+<img height="200" width="200" src="{% if product.image %}{{ product.image.url}}{% else %}{{product.image_url}}{% endif %}">
+</a>
+</td>
+<td style="vertical-align: middle;">{{ product.name }}</td>
+<!-- <td style="vertical-align: middle;">{{ item.quantity }}</td> -->
+<td style="vertical-align: middle;">
+<form action="{% url 'cartapp:cart_add' product.id %}" method="post">
+    {{ item.update_quantity_form.quantity }}
+    {{ item.update_quantity_form.update }}
+    <input type="submit" value="Update">
+    {% csrf_token %}
+    </form>
+</td>
+<td style="vertical-align: middle;"><a href="{% url 'cartapp:cart_remove' product.id%}">Remove</a></td>
+<td class="num" style="vertical-align: middle;">${{ item.price }}</td>
+<td class="num" style="vertical-align: middle;">${{ item.total_price }}</td>
+</tr>
+{% endwith %}
+{% endfor %}
+
+<thead style="background-color:DodgerBlue;">
+    <tr class="total">
+        <td class="text-white">Total</td>
+        <td colspan="4"></td>
+        <td class="num text-white">
+        ${{ cart.get_total_price|floatformat:"2" }}
+        </td>
+    </tr>
+</thead>
+
+</tbody>
+</table>
+{% else %}
+<h5> No cart </h5>
+{% endif %}
+</div>
+</section>
+
+{% endblock %}
