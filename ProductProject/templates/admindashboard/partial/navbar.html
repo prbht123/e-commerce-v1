@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm border-bottom">
+    <div class="container-fluid"> 
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgmd2uAfYodCugIWKCFZsxYx4di4mCC_EYF7t2Fc_HDA&usqp=CAU&ec=48665699" alt="Snow" style="width:20%;height: 90px;">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mynavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-flex">
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-primary me-2" href="{% url 'productclientapp:home' %}">Goto main site</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-primary me-2" href="{% url 'productclientapp:logout' %}">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+          

@@ -1,0 +1,88 @@
+{% load static %}
+<style>
+  .logo {
+    font-size: 100%;
+    border: 0.1rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+    box-shadow: 0 0 .7rem #fff,
+        0 0 .7rem #fff,
+        0 0 2rem SlateBlue,
+        0 0 0.8rem SlateBlue,
+        0 0 2.8rem SlateBlue,
+        inset 0 0 6.3rem SlateBlue;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #0039c3;
+    color: white;
+    font-family: Serif;
+}
+.nav-link{
+    color: #fff;
+}
+.nav-link:hover {
+    background-color: SlateBlue;
+    border-radius: 20px;
+    transition: 0.1s ease;
+    color: white;
+    padding: 7px;
+}
+</style>
+  <nav class=" navbar navbar-expand-lg nav-lower">
+    
+    <div class="container-fluid me-5">
+      <div class="logo">PRODUCT COMPANY</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-fill w-50 ms-4">
+          <li class="nav-item ">
+            <a class="nav-link active text-white" aria-current="page" href="/">HOME</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " href="{% url 'productclientapp:list_product' %}" >  PRODUCTS  </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'productclientapp:about_us' %}">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'productclientapp:contact' %}">CONTACT US</a>
+        </li>
+       
+      </ul>
+      <form class="d-flex">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-fill w-100">
+        {% if request.session.user.is_staff %}
+            <li class="nav-item">
+                <a class="me-5 nav-link" href="{% url 'admindashboard:home' %}">DASHBOARD</a>
+            </li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="me-5 nav-link" href="{% url 'cartapp:cart_detail' %}">Cart</a>
+        </li>
+        {% if request.session.user %}
+            <li class="nav-item">
+              <a class=" nav-link" href="{% url 'productclientapp:list_wish_item' %}">WishList</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'accountapp:profile' %}">{{request.session.user.username}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="me-5 nav-link" href="{% url 'productclientapp:logout' %}">LOGOUT</a>
+            </li>
+            
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link deactive" href="{% url 'productclientapp:login' %}">SIGNIN</a>
+        </li>
+        {% endif %}
+        </ul>
+      </form>
+    </div>
+  </div>
+</nav>

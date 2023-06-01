@@ -1,0 +1,55 @@
+{% extends 'client/partial/base.html' %}
+{% load static %}
+{% block title %}
+Product Detail
+{% endblock %}
+{% block content %}
+
+<section class="mt-5 mb-5">
+    <div class="container justify-content-center mt-4">
+        <div class="row">
+            <div class="col-sm-8 ms-5">
+                <img src="{% if product.image %}{{product.image}}{% endif %}" style="height:500px;width:100vh;"></img>
+            </div>
+        </div>
+    </div>
+<div class="container mt-4">
+    <p style="font-weight: 700;color: orangered;font-size: 30px;">{{product.name}}</p>  
+    <hr style="width: 15%;"> 
+    
+    <div class="row align-items-start mb-4" style="height:50%;">
+      <div class="col-md-7">
+      <div class="row">
+      <div class="col">
+        <p> Category : {{product.category}}</p>
+              <p>Stock : {{product.stock}}</p>
+              
+        </div>
+        
+      </div>
+              <h5>Descripton</h5>
+              <p>{{product.description}}</p>
+      </div>
+  
+      <div class="col-5 ">
+        
+         <hr style="width: 65%;">
+  
+  
+          <p>  Cost :  R${{product.price}} </p>
+          
+          <div class="col-auto">
+            <form action="{% url 'cartapp:cart_add' product.id %}" method="post">
+              {{ cart_product_form }}
+              {% csrf_token %}
+              <input class="btn btn-primary text-white" type="submit" value="Add to cart">
+          </form>
+          </div>
+       
+
+
+      </div>
+      </div>
+</div>
+</section>
+{% endblock %}
